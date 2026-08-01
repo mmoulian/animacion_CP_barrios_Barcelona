@@ -1,0 +1,367 @@
+[
+  {
+    "nombre": "EL RAVAL",
+    "codigo": "08001",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL BARRI GÒTIC",
+    "codigo": "08002",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA BARCELONETA",
+    "codigo": "08003",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA NOVA ESQUERRA DE L'EIXAMPLE",
+    "codigo": "08003",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "SANT PERE, SANTA CATERINA I LA RIBERA",
+    "codigo": "08003",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA FONT DE LA GUATLLA",
+    "codigo": "08004",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "EL PARC I LA LLACUNA DEL POBLENOU",
+    "codigo": "08005",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL POBLENOU",
+    "codigo": "08005",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA VILA OLÍMPICA DEL POBLENOU",
+    "codigo": "08005",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA DRETA DE L'EIXAMPLE",
+    "codigo": "08009",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA VILA DE GRÀCIA",
+    "codigo": "08012",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL FORT PIENC",
+    "codigo": "08013",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "HOSTAFRANCS",
+    "codigo": "08014",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "LA BORDETA",
+    "codigo": "08014",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "SANTS",
+    "codigo": "08014",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "SANT ANTONI",
+    "codigo": "08015",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "L'ANTIGA ESQUERRA DE L'EIXAMPLE",
+    "codigo": "08016",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "LA PROSPERITAT",
+    "codigo": "08016",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "PORTA",
+    "codigo": "08016",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LES TRES TORRES",
+    "codigo": "08017",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "SARRIÀ",
+    "codigo": "08017",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "VALLVIDRERA, EL TIBIDABO I LES PLANES",
+    "codigo": "08017",
+    "categoria": "No vulnerable · riesgo de calor bajo"
+  },
+  {
+    "nombre": "EL CLOT",
+    "codigo": "08018",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL POBLE SEC",
+    "codigo": "08018",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "DIAGONAL MAR I EL FRONT MARÍTIM DEL POBLENOU",
+    "codigo": "08019",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL BESÒS I EL MARESME",
+    "codigo": "08019",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA VERNEDA I LA PAU",
+    "codigo": "08020",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "PROVENÇALS DEL POBLENOU",
+    "codigo": "08020",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "SANT MARTÍ DE PROVENÇALS",
+    "codigo": "08020",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "SANT GERVASI - GALVANY",
+    "codigo": "08021",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "SANT GERVASI - LA BONANOVA",
+    "codigo": "08022",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL COLL",
+    "codigo": "08023",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL PUTXET I EL FARRÓ",
+    "codigo": "08023",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "VALLCARCA I ELS PENITENTS",
+    "codigo": "08023",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "CAN BARÓ",
+    "codigo": "08024",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL CAMP D'EN GRASSOT I GRÀCIA NOVA",
+    "codigo": "08024",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA SALUT",
+    "codigo": "08024",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL BAIX GUINARDÓ",
+    "codigo": "08025",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA SAGRADA FAMÍLIA",
+    "codigo": "08025",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL CAMP DE L'ARPA DEL CLOT",
+    "codigo": "08026",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL CONGRÉS I ELS INDIANS",
+    "codigo": "08027",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA SAGRERA",
+    "codigo": "08027",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "NAVAS",
+    "codigo": "08027",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA MATERNITAT I SANT RAMON",
+    "codigo": "08028",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "LES CORTS",
+    "codigo": "08028",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "SANTS - BADAL",
+    "codigo": "08028",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "BARÓ DE VIVER",
+    "codigo": "08030",
+    "categoria": "Vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "EL BON PASTOR",
+    "codigo": "08030",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "SANT ANDREU",
+    "codigo": "08030",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "CAN PEGUERA",
+    "codigo": "08031",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL TURÓ DE LA PEIRA",
+    "codigo": "08031",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "VILAPICINA I LA TORRE LLOBETA",
+    "codigo": "08031",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "EL CARMEL",
+    "codigo": "08032",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "HORTA",
+    "codigo": "08032",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA FONT D'EN FARGUES",
+    "codigo": "08032",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "CIUTAT MERIDIANA",
+    "codigo": "08033",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA TRINITAT NOVA",
+    "codigo": "08033",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA TRINITAT VELLA",
+    "codigo": "08033",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "TORRE BARÓ",
+    "codigo": "08033",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "PEDRALBES",
+    "codigo": "08034",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA CLOTA",
+    "codigo": "08035",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA TEIXONERA",
+    "codigo": "08035",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA VALL D'HEBRON",
+    "codigo": "08035",
+    "categoria": "No vulnerable · riesgo de calor bajo"
+  },
+  {
+    "nombre": "LES ROQUETES",
+    "codigo": "08035",
+    "categoria": "Vulnerable · riesgo de calor bajo"
+  },
+  {
+    "nombre": "MONTBAU",
+    "codigo": "08035",
+    "categoria": "No vulnerable · riesgo de calor bajo"
+  },
+  {
+    "nombre": "SANT GENÍS DELS AGUDELLS",
+    "codigo": "08035",
+    "categoria": "No vulnerable · riesgo de calor bajo"
+  },
+  {
+    "nombre": "LA MARINA DE PORT",
+    "codigo": "08039",
+    "categoria": "No vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "EL GUINARDÓ",
+    "codigo": "08041",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "CANYELLES",
+    "codigo": "08042",
+    "categoria": "Vulnerable · riesgo de calor bajo"
+  },
+  {
+    "nombre": "LA GUINEUETA",
+    "codigo": "08042",
+    "categoria": "No vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "LA MARINA DEL PRAT VERMELL",
+    "codigo": "08042",
+    "categoria": "Vulnerable · riesgo de calor alto"
+  },
+  {
+    "nombre": "VALLBONA",
+    "codigo": "08042",
+    "categoria": "Vulnerable · riesgo de calor medio"
+  },
+  {
+    "nombre": "VERDUN",
+    "codigo": "08042",
+    "categoria": "Vulnerable · riesgo de calor bajo"
+  }
+]

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CP Barrios — STORY CALOR</title>
+  <link rel="stylesheet" href="https://use.typekit.net/gzc7pai.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="banner">
+    <div class="digits" id="digits"></div>
+    <div class="name-area">
+      <span class="name-text" id="name"></span>
+    </div>
+    <div class="indicator">
+      <div class="stress-track">
+        <div class="stress-dot" id="stress-dot"></div>
+      </div>
+      <div class="stress-scale" id="stress-scale" aria-hidden="true">
+        <div class="stress-row" data-level="5"><span></span><span></span><span></span></div>
+        <div class="stress-row" data-level="4"><span></span><span></span><span></span></div>
+        <div class="stress-row" data-level="3"><span></span><span></span><span></span></div>
+        <div class="stress-row" data-level="2"><span></span><span></span><span></span></div>
+        <div class="stress-row" data-level="1"><span></span><span></span><span></span></div>
+        <div class="stress-row" data-level="0"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-row">
+      <span class="timecode" id="timecode">00:00:00  (0f @ 25fps)</span>
+      <div class="info" id="info">Cargando…</div>
+    </div>
+
+    <input type="range" class="scrubber" id="scrubber" min="0" max="72" value="0" step="1">
+
+    <div class="panel-row">
+      <button id="btn-prev">← Prev</button>
+      <button id="btn-play">▶ Play</button>
+      <button id="btn-next">Next →</button>
+      <button id="btn-export">Exportar timeline AE</button>
+      <span class="status" id="status"></span>
+    </div>
+
+    <div class="config-grid">
+      <label>
+        FPS
+        <input type="range" id="cfg-fps" min="24" max="30" step="1">
+        <output id="cfg-fps-val"></output>
+      </label>
+      <label>
+        Stagger dígitos (s)
+        <input type="range" id="cfg-stagger" min="0.03" max="0.15" step="0.01">
+        <output id="cfg-stagger-val"></output>
+      </label>
+      <label>
+        Duración dígito (s)
+        <input type="range" id="cfg-digit-dur" min="0.08" max="0.35" step="0.01">
+        <output id="cfg-digit-dur-val"></output>
+      </label>
+      <label>
+        Duración reveal (s)
+        <input type="range" id="cfg-reveal-dur" min="0.2" max="0.8" step="0.01">
+        <output id="cfg-reveal-dur-val"></output>
+      </label>
+      <label>
+        Duración indicador (s)
+        <input type="range" id="cfg-ind-dur" min="0.15" max="0.6" step="0.01">
+        <output id="cfg-ind-dur-val"></output>
+      </label>
+      <label>
+        Hold entre barrios (s)
+        <input type="range" id="cfg-hold-dur" min="0.5" max="3" step="0.1">
+        <output id="cfg-hold-dur-val"></output>
+      </label>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

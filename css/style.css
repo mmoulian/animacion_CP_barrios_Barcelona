@@ -1,0 +1,254 @@
+/* Tipografía: Adobe Fonts — https://use.typekit.net/gzc7pai.css
+   Familias separadas para evitar que el navegador aplique Heavy (900) a los nombres. */
+@font-face {
+  font-family: "korolev-compressed-light";
+  src: url("https://use.typekit.net/af/59704a/00000000000000007735e8b5/31/l?subset_id=2&fvd=n3&v=3") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "korolev-compressed-heavy";
+  src: url("https://use.typekit.net/af/748d6d/00000000000000007735e8b4/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --orange: #FB8C00;
+  --ink: #212121;
+  --line: 1px;
+  --digit-h: 68px;
+  --banner-h: 72px;
+  --text-size: 2.6rem;
+  --font-digits: "korolev-compressed-heavy", "korolev-compressed", sans-serif;
+  --font-name: "korolev-compressed-light", "korolev-compressed", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  background: #111;
+  font-family: var(--font-digits);
+  color: #ccc;
+  padding: 24px;
+}
+
+/* ── Banner principal ── */
+.banner {
+  display: flex;
+  align-items: stretch;
+  background: var(--orange);
+  border: var(--line) solid var(--ink);
+  height: var(--banner-h);
+  width: min(960px, 96vw);
+  overflow: hidden;
+}
+
+.digits {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.digit-box {
+  width: 54px;
+  height: 100%;
+  border-right: var(--line) solid var(--ink);
+  overflow: hidden;
+  position: relative;
+}
+
+.digit-strip {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.digit-strip span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--digit-h);
+  font-family: var(--font-digits);
+  font-size: var(--text-size);
+  font-weight: 900;
+  font-synthesis: none;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* ── Nombre del barrio ── */
+.name-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  overflow: hidden;
+  min-width: 0;
+  font-weight: 300;
+}
+
+.name-text {
+  font-family: var(--font-name);
+  font-weight: 300;
+  font-style: normal;
+  font-synthesis: none;
+  font-size: var(--text-size);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  white-space: nowrap;
+  text-transform: uppercase;
+  clip-path: inset(100% 0 0 0);
+  will-change: clip-path;
+}
+
+/* ── Termómetro de estrés térmico ── */
+.indicator {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  padding: 0 12px 0 14px;
+  border-left: var(--line) solid var(--ink);
+  flex-shrink: 0;
+}
+
+.stress-track {
+  width: 8px;
+  height: 54px;
+  border: var(--line) solid var(--ink);
+  border-radius: 4px;
+  position: relative;
+  align-self: center;
+}
+
+.stress-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 7px;
+  background: var(--ink);
+  border-radius: 2px;
+  bottom: 3px;
+  will-change: bottom;
+}
+
+.stress-scale {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 54px;
+  align-self: center;
+}
+
+.stress-row {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.stress-row span {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: 0.18;
+  transition: opacity 0.25s ease;
+}
+
+.stress-row.active span {
+  opacity: 1;
+}
+
+/* ── Panel de control / sync AE ── */
+.panel {
+  width: min(960px, 96vw);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.panel-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.panel button {
+  font-family: var(--font-digits);
+  font-size: 0.8rem;
+  font-weight: 900;
+  padding: 7px 16px;
+  background: var(--orange);
+  border: var(--line) solid var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.panel button:hover { filter: brightness(1.1); }
+.panel button.active { background: var(--ink); color: var(--orange); }
+
+.timecode {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: var(--orange);
+  min-width: 140px;
+}
+
+.info {
+  flex: 1;
+  min-width: 200px;
+  line-height: 1.4;
+}
+
+.info strong { color: #fff; }
+
+.scrubber {
+  width: 100%;
+  accent-color: var(--orange);
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px 16px;
+}
+
+.config-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.config-grid input[type="range"] {
+  accent-color: var(--orange);
+  width: 100%;
+}
+
+.config-grid output {
+  color: var(--orange);
+  font-family: monospace;
+}
+
+.status {
+  font-size: 0.75rem;
+  color: #666;
+}
