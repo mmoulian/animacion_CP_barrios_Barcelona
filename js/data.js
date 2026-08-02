@@ -1,11 +1,13 @@
 /** Datos parseados de BARRIOS_CODIGO_CAT.csv */
 export async function loadBarrios() {
+  const fetchOpts = { cache: 'no-store' };
+
   try {
-    const res = await fetch('BARRIOS_CODIGO_CAT.csv');
+    const res = await fetch('BARRIOS_CODIGO_CAT.csv', fetchOpts);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return parseCSV(await res.text());
   } catch (err) {
-    const res = await fetch('barrios.json');
+    const res = await fetch('barrios.json', fetchOpts);
     if (!res.ok) throw new Error('No se pudo cargar BARRIOS_CODIGO_CAT.csv — inicia un servidor local.');
     return res.json();
   }

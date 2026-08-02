@@ -22,9 +22,10 @@
   --orange: #FB8C00;
   --ink: #212121;
   --line: 1px;
-  --digit-h: 68px;
-  --banner-h: 72px;
-  --text-size: 2.6rem;
+  --banner-h: 56px;
+  --digit-h: var(--banner-h);
+  --stress-h: 36px;
+  --text-size: 2.15rem;
   --font-digits: "korolev-compressed-heavy", "korolev-compressed", sans-serif;
   --font-name: "korolev-compressed-light", "korolev-compressed", sans-serif;
 }
@@ -48,6 +49,7 @@ body {
   align-items: stretch;
   background: var(--orange);
   border: var(--line) solid var(--ink);
+  border-radius: 3px;
   height: var(--banner-h);
   width: min(960px, 96vw);
   overflow: hidden;
@@ -59,7 +61,7 @@ body {
 }
 
 .digit-box {
-  width: 54px;
+  width: 46px;
   height: 100%;
   border-right: var(--line) solid var(--ink);
   overflow: hidden;
@@ -124,30 +126,30 @@ body {
 
 .stress-track {
   width: 8px;
-  height: 54px;
+  height: var(--stress-h);
   border: var(--line) solid var(--ink);
   border-radius: 4px;
   position: relative;
   align-self: center;
+  overflow: hidden;
 }
 
-.stress-dot {
+.stress-fill {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 7px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
   background: var(--ink);
-  border-radius: 2px;
-  bottom: 3px;
-  will-change: bottom;
+  border-radius: 2px 2px 3px 3px;
+  will-change: height;
 }
 
 .stress-scale {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 54px;
+  height: var(--stress-h);
   align-self: center;
 }
 

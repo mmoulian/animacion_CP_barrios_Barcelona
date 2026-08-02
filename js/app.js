@@ -5,7 +5,7 @@ import { BarrioAnimator } from './animation.js';
 
 const digitsEl = document.getElementById('digits');
 const nameEl = document.getElementById('name');
-const indicatorDot = document.getElementById('stress-dot');
+const indicatorFill = document.getElementById('stress-fill');
 const timecodeEl = document.getElementById('timecode');
 const infoEl = document.getElementById('info');
 const statusEl = document.getElementById('status');
@@ -18,7 +18,7 @@ const btnExport = document.getElementById('btn-export');
 const animator = new BarrioAnimator({
   digitsEl,
   nameEl,
-  indicatorDot,
+  indicatorFill,
   stressScaleEl: document.getElementById('stress-scale'),
   onFrame: updateUI,
   onTransitionEnd: (i) => {

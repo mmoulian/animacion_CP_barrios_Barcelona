@@ -4,7 +4,7 @@ import { BarrioAnimator } from './animation.js';
 const animator = new BarrioAnimator({
   digitsEl: document.getElementById('digits'),
   nameEl: document.getElementById('name'),
-  indicatorDot: document.getElementById('stress-dot'),
+  indicatorFill: document.getElementById('stress-fill'),
   stressScaleEl: document.getElementById('stress-scale'),
 });
 

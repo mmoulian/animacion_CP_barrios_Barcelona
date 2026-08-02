@@ -1,7 +1,10 @@
 import { CONFIG } from './config.js';
 import { getStressLevel, getStressIndex, STRESS_POSITIONS } from './stress.js';
 
-const DIGIT_H = 68;
+function readDigitH() {
+  const raw = getComputedStyle(document.documentElement).getPropertyValue('--banner-h');
+  return parseInt(raw, 10) || 56;
+}
 
 /** Curva de aceleración fuerte (ease-in quint) */
 function easeInQuint(t) {
@@ -9,10 +12,10 @@ function easeInQuint(t) {
 }
 
 export class BarrioAnimator {
-  constructor({ digitsEl, nameEl, indicatorDot, stressScaleEl, onFrame, onTransitionEnd }) {
+  constructor({ digitsEl, nameEl, indicatorFill, stressScaleEl, onFrame, onTransitionEnd }) {
     this.digitsEl = digitsEl;
     this.nameEl = nameEl;
-    this.indicatorDot = indicatorDot;
+    this.indicatorFill = indicatorFill;
     this.stressScaleEl = stressScaleEl;
     this.onFrame = onFrame;
     this.onTransitionEnd = onTransitionEnd;
@@ -50,6 +53,7 @@ export class BarrioAnimator {
   _buildDigitBoxes() {
     this.digitsEl.innerHTML = '';
     this.strips = [];
+    this._digitH = readDigitH();
 
     for (let i = 0; i < 5; i++) {
       const box = document.createElement('div');
@@ -73,7 +77,7 @@ export class BarrioAnimator {
   _setDigitsInstant(codigo) {
     codigo.split('').forEach((d, i) => {
       this.strips[i].style.transition = 'none';
-      this.strips[i].style.transform = `translateY(-${Number(d) * DIGIT_H}px)`;
+      this.strips[i].style.transform = `translateY(-${Number(d) * this._digitH}px)`;
       this.strips[i].offsetHeight;
       this.strips[i].style.transition = '';
     });
@@ -82,7 +86,7 @@ export class BarrioAnimator {
   _setDigitAnimated(index, digit, duration) {
     const strip = this.strips[index];
     strip.style.transition = `transform ${duration}s cubic-bezier(0.4, 0, 0.2, 1)`;
-    strip.style.transform = `translateY(-${digit * DIGIT_H}px)`;
+    strip.style.transform = `translateY(-${digit * this._digitH}px)`;
   }
 
   _setReveal(progress) {
@@ -93,17 +97,12 @@ export class BarrioAnimator {
   }
 
   _setIndicator(level, animate) {
-    const track = this.indicatorDot.parentElement;
-    const trackH = track.clientHeight;
-    const dotH = this.indicatorDot.offsetHeight;
-    const pad = 3;
-    const maxTravel = trackH - dotH - pad * 2;
-    const y = (1 - level) * maxTravel + pad;
+    const pct = Math.max(0, Math.min(1, level)) * 100;
 
-    this.indicatorDot.style.transition = animate
-      ? `bottom ${CONFIG.indicatorDuration}s cubic-bezier(0.22, 1, 0.36, 1)`
+    this.indicatorFill.style.transition = animate
+      ? `height ${CONFIG.indicatorDuration}s cubic-bezier(0.22, 1, 0.36, 1)`
       : 'none';
-    this.indicatorDot.style.bottom = `${y}px`;
+    this.indicatorFill.style.height = `${pct}%`;
   }
 
   _setScaleLevel(index) {
@@ -229,11 +228,11 @@ export class BarrioAnimator {
         const current = fromD + delta * eased;
         const strip = this.strips[i];
         strip.style.transition = 'none';
-        strip.style.transform = `translateY(-${current * DIGIT_H}px)`;
+        strip.style.transform = `translateY(-${current * this._digitH}px)`;
       } else if (elapsed >= startT + digitDuration) {
         this._setDigitAnimated(i, toD, 0);
         this.strips[i].style.transition = 'none';
-        this.strips[i].style.transform = `translateY(-${toD * DIGIT_H}px)`;
+        this.strips[i].style.transform = `translateY(-${toD * this._digitH}px)`;
       }
     }
 
@@ -247,7 +246,6 @@ export class BarrioAnimator {
     const indT = Math.min(1, elapsed / CONFIG.indicatorDuration);
     const stress = this.currentStress + (targetStress - this.currentStress) * easeInQuint(indT);
     this._setIndicator(stress, false);
-    this.indicatorDot.style.transition = 'none';
 
     const totalDuration = this.getTransitionDuration();
 
