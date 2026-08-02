@@ -1,74 +1,74 @@
-﻿BARRI;CODIGO;CATEGORIA
-EL RAVAL;08001;No vulnerable · riesgo de calor medio
-EL BARRI GÒTIC;08002;No vulnerable · riesgo de calor medio
-LA BARCELONETA;08003;No vulnerable · riesgo de calor medio
-LA NOVA ESQUERRA DE L'EIXAMPLE;08003;No vulnerable · riesgo de calor alto
-SANT PERE, SANTA CATERINA I LA RIBERA;08003;No vulnerable · riesgo de calor medio
-LA FONT DE LA GUATLLA;08004;No vulnerable · riesgo de calor alto
-EL PARC I LA LLACUNA DEL POBLENOU;08005;No vulnerable · riesgo de calor medio
-EL POBLENOU;08005;No vulnerable · riesgo de calor medio
-LA VILA OLÍMPICA DEL POBLENOU;08005;No vulnerable · riesgo de calor medio
-LA DRETA DE L'EIXAMPLE;08009;No vulnerable · riesgo de calor medio
-LA VILA DE GRÀCIA;08012;No vulnerable · riesgo de calor medio
-EL FORT PIENC;08013;No vulnerable · riesgo de calor medio
-HOSTAFRANCS;08014;No vulnerable · riesgo de calor alto
-LA BORDETA;08014;No vulnerable · riesgo de calor alto
-SANTS;08014;No vulnerable · riesgo de calor alto
-SANT ANTONI;08015;No vulnerable · riesgo de calor alto
-L'ANTIGA ESQUERRA DE L'EIXAMPLE;08016;No vulnerable · riesgo de calor alto
-LA PROSPERITAT;08016;Vulnerable · riesgo de calor medio
-PORTA;08016;No vulnerable · riesgo de calor medio
-LES TRES TORRES;08017;No vulnerable · riesgo de calor medio
-SARRIÀ;08017;No vulnerable · riesgo de calor medio
-VALLVIDRERA, EL TIBIDABO I LES PLANES;08017;No vulnerable · riesgo de calor bajo
-EL CLOT;08018;No vulnerable · riesgo de calor medio
-EL POBLE SEC;08018;No vulnerable · riesgo de calor medio
-DIAGONAL MAR I EL FRONT MARÍTIM DEL POBLENOU;08019;No vulnerable · riesgo de calor medio
-EL BESÒS I EL MARESME;08019;Vulnerable · riesgo de calor medio
-LA VERNEDA I LA PAU;08020;No vulnerable · riesgo de calor medio
-PROVENÇALS DEL POBLENOU;08020;No vulnerable · riesgo de calor medio
-SANT MARTÍ DE PROVENÇALS;08020;No vulnerable · riesgo de calor medio
-SANT GERVASI - GALVANY;08021;No vulnerable · riesgo de calor medio
-SANT GERVASI - LA BONANOVA;08022;No vulnerable · riesgo de calor medio
-EL COLL;08023;No vulnerable · riesgo de calor medio
-EL PUTXET I EL FARRÓ;08023;No vulnerable · riesgo de calor medio
-VALLCARCA I ELS PENITENTS;08023;No vulnerable · riesgo de calor medio
-CAN BARÓ;08024;No vulnerable · riesgo de calor medio
-EL CAMP D'EN GRASSOT I GRÀCIA NOVA;08024;No vulnerable · riesgo de calor medio
-LA SALUT;08024;No vulnerable · riesgo de calor medio
-EL BAIX GUINARDÓ;08025;No vulnerable · riesgo de calor medio
-LA SAGRADA FAMÍLIA;08025;No vulnerable · riesgo de calor medio
-EL CAMP DE L'ARPA DEL CLOT;08026;No vulnerable · riesgo de calor medio
-EL CONGRÉS I ELS INDIANS;08027;No vulnerable · riesgo de calor medio
-LA SAGRERA;08027;No vulnerable · riesgo de calor alto
-NAVAS;08027;No vulnerable · riesgo de calor medio
-LA MATERNITAT I SANT RAMON;08028;No vulnerable · riesgo de calor alto
-LES CORTS;08028;No vulnerable · riesgo de calor alto
-SANTS - BADAL;08028;No vulnerable · riesgo de calor alto
-BARÓ DE VIVER;08030;Vulnerable · riesgo de calor alto
-EL BON PASTOR;08030;Vulnerable · riesgo de calor medio
-SANT ANDREU;08030;No vulnerable · riesgo de calor medio
-CAN PEGUERA;08031;Vulnerable · riesgo de calor medio
-EL TURÓ DE LA PEIRA;08031;Vulnerable · riesgo de calor medio
-VILAPICINA I LA TORRE LLOBETA;08031;No vulnerable · riesgo de calor medio
-EL CARMEL;08032;Vulnerable · riesgo de calor medio
-HORTA;08032;No vulnerable · riesgo de calor medio
-LA FONT D'EN FARGUES;08032;No vulnerable · riesgo de calor medio
-CIUTAT MERIDIANA;08033;Vulnerable · riesgo de calor medio
-LA TRINITAT NOVA;08033;Vulnerable · riesgo de calor medio
-LA TRINITAT VELLA;08033;Vulnerable · riesgo de calor medio
-TORRE BARÓ;08033;Vulnerable · riesgo de calor medio
-PEDRALBES;08034;No vulnerable · riesgo de calor medio
-LA CLOTA;08035;No vulnerable · riesgo de calor medio
-LA TEIXONERA;08035;No vulnerable · riesgo de calor medio
-LA VALL D'HEBRON;08035;No vulnerable · riesgo de calor bajo
-LES ROQUETES;08035;Vulnerable · riesgo de calor bajo
-MONTBAU;08035;No vulnerable · riesgo de calor bajo
-SANT GENÍS DELS AGUDELLS;08035;No vulnerable · riesgo de calor bajo
-LA MARINA DE PORT;08039;No vulnerable · riesgo de calor alto
-EL GUINARDÓ;08041;No vulnerable · riesgo de calor medio
-CANYELLES;08042;Vulnerable · riesgo de calor bajo
-LA GUINEUETA;08042;No vulnerable · riesgo de calor medio
-LA MARINA DEL PRAT VERMELL;08042;Vulnerable · riesgo de calor alto
-VALLBONA;08042;Vulnerable · riesgo de calor medio
-VERDUN;08042;Vulnerable · riesgo de calor bajo
+﻿BARRI;CATEGORIA;CODIGO
+EL RAVAL;No vulnerable · riesgo de calor medio;08001
+EL BARRI GÒTIC;No vulnerable · riesgo de calor medio;08002
+LA BARCELONETA;No vulnerable · riesgo de calor medio;08003
+NOVA ESQUERRA DE L'EIXAMPLE;No vulnerable · riesgo de calor alto;08003
+SANTA CATERINA I LA RIBERA;No vulnerable · riesgo de calor medio;08003
+LA FONT DE LA GUATLLA;No vulnerable · riesgo de calor alto;08004
+EL PARC I LA LLACUNA;No vulnerable · riesgo de calor medio;08005
+EL POBLENOU;No vulnerable · riesgo de calor medio;08005
+LA VILA OLÍMPICA ;No vulnerable · riesgo de calor medio;08005
+LA DRETA DE L'EIXAMPLE;No vulnerable · riesgo de calor medio;08009
+LA VILA DE GRÀCIA;No vulnerable · riesgo de calor medio;08012
+EL FORT PIENC;No vulnerable · riesgo de calor medio;08013
+HOSTAFRANCS;No vulnerable · riesgo de calor alto;08014
+LA BORDETA;No vulnerable · riesgo de calor alto;08014
+SANTS;No vulnerable · riesgo de calor alto;08014
+SANT ANTONI;No vulnerable · riesgo de calor alto;08015
+ANTIGA ESQUERRA DE L'EIXAMPLE;No vulnerable · riesgo de calor alto;08016
+LA PROSPERITAT;Vulnerable · riesgo de calor medio;08016
+PORTA;No vulnerable · riesgo de calor medio;08016
+LES TRES TORRES;No vulnerable · riesgo de calor medio;08017
+SARRIÀ;No vulnerable · riesgo de calor medio;08017
+VALLVIDRERA;No vulnerable · riesgo de calor bajo;08017
+EL CLOT;No vulnerable · riesgo de calor medio;08018
+EL POBLE SEC;No vulnerable · riesgo de calor medio;08018
+DIAGONAL MAR ;No vulnerable · riesgo de calor medio;08019
+EL BESÒS I EL MARESME;Vulnerable · riesgo de calor medio;08019
+LA VERNEDA I LA PAU;No vulnerable · riesgo de calor medio;08020
+PROVENÇALS DEL POBLENOU;No vulnerable · riesgo de calor medio;08020
+SANT MARTÍ DE PROVENÇALS;No vulnerable · riesgo de calor medio;08020
+SANT GERVASI - GALVANY;No vulnerable · riesgo de calor medio;08021
+SANT GERVASI - LA BONANOVA;No vulnerable · riesgo de calor medio;08022
+EL COLL;No vulnerable · riesgo de calor medio;08023
+EL PUTXET I EL FARRÓ;No vulnerable · riesgo de calor medio;08023
+VALLCARCA I ELS PENITENTS;No vulnerable · riesgo de calor medio;08023
+CAN BARÓ;No vulnerable · riesgo de calor medio;08024
+EL CAMP D'EN GRASSOT ;No vulnerable · riesgo de calor medio;08024
+LA SALUT;No vulnerable · riesgo de calor medio;08024
+EL BAIX GUINARDÓ;No vulnerable · riesgo de calor medio;08025
+LA SAGRADA FAMÍLIA;No vulnerable · riesgo de calor medio;08025
+EL CAMP DE L'ARPA DEL CLOT;No vulnerable · riesgo de calor medio;08026
+EL CONGRÉS I ELS INDIANS;No vulnerable · riesgo de calor medio;08027
+LA SAGRERA;No vulnerable · riesgo de calor alto;08027
+NAVAS;No vulnerable · riesgo de calor medio;08027
+LA MATERNITAT ;No vulnerable · riesgo de calor alto;08028
+LES CORTS;No vulnerable · riesgo de calor alto;08028
+SANTS - BADAL;No vulnerable · riesgo de calor alto;08028
+BARÓ DE VIVER;Vulnerable · riesgo de calor alto;08030
+EL BON PASTOR;Vulnerable · riesgo de calor medio;08030
+SANT ANDREU;No vulnerable · riesgo de calor medio;08030
+CAN PEGUERA;Vulnerable · riesgo de calor medio;08031
+EL TURÓ DE LA PEIRA;Vulnerable · riesgo de calor medio;08031
+VILAPICINA I LA TORRE LLOBETA;No vulnerable · riesgo de calor medio;08031
+EL CARMEL;Vulnerable · riesgo de calor medio;08032
+HORTA;No vulnerable · riesgo de calor medio;08032
+LA FONT D'EN FARGUES;No vulnerable · riesgo de calor medio;08032
+CIUTAT MERIDIANA;Vulnerable · riesgo de calor medio;08033
+LA TRINITAT NOVA;Vulnerable · riesgo de calor medio;08033
+LA TRINITAT VELLA;Vulnerable · riesgo de calor medio;08033
+TORRE BARÓ;Vulnerable · riesgo de calor medio;08033
+PEDRALBES;No vulnerable · riesgo de calor medio;08034
+LA CLOTA;No vulnerable · riesgo de calor medio;08035
+LA TEIXONERA;No vulnerable · riesgo de calor medio;08035
+LA VALL D'HEBRON;No vulnerable · riesgo de calor bajo;08035
+LES ROQUETES;Vulnerable · riesgo de calor bajo;08035
+MONTBAU;No vulnerable · riesgo de calor bajo;08035
+SANT GENÍS DELS AGUDELLS;No vulnerable · riesgo de calor bajo;08035
+LA MARINA DE PORT;No vulnerable · riesgo de calor alto;08039
+EL GUINARDÓ;No vulnerable · riesgo de calor medio;08041
+CANYELLES;Vulnerable · riesgo de calor bajo;08042
+LA GUINEUETA;No vulnerable · riesgo de calor medio;08042
+LA MARINA DEL PRAT VERMELL;Vulnerable · riesgo de calor alto;08042
+VALLBONA;Vulnerable · riesgo de calor medio;08042
+VERDUN;Vulnerable · riesgo de calor bajo;08042

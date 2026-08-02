@@ -15,12 +15,12 @@
     "categoria": "No vulnerable · riesgo de calor medio"
   },
   {
-    "nombre": "LA NOVA ESQUERRA DE L'EIXAMPLE",
+    "nombre": "NOVA ESQUERRA DE L'EIXAMPLE",
     "codigo": "08003",
     "categoria": "No vulnerable · riesgo de calor alto"
   },
   {
-    "nombre": "SANT PERE, SANTA CATERINA I LA RIBERA",
+    "nombre": "SANTA CATERINA I LA RIBERA",
     "codigo": "08003",
     "categoria": "No vulnerable · riesgo de calor medio"
   },
@@ -30,7 +30,7 @@
     "categoria": "No vulnerable · riesgo de calor alto"
   },
   {
-    "nombre": "EL PARC I LA LLACUNA DEL POBLENOU",
+    "nombre": "EL PARC I LA LLACUNA",
     "codigo": "08005",
     "categoria": "No vulnerable · riesgo de calor medio"
   },
@@ -40,7 +40,7 @@
     "categoria": "No vulnerable · riesgo de calor medio"
   },
   {
-    "nombre": "LA VILA OLÍMPICA DEL POBLENOU",
+    "nombre": "LA VILA OLÍMPICA",
     "codigo": "08005",
     "categoria": "No vulnerable · riesgo de calor medio"
   },
@@ -80,7 +80,7 @@
     "categoria": "No vulnerable · riesgo de calor alto"
   },
   {
-    "nombre": "L'ANTIGA ESQUERRA DE L'EIXAMPLE",
+    "nombre": "ANTIGA ESQUERRA DE L'EIXAMPLE",
     "codigo": "08016",
     "categoria": "No vulnerable · riesgo de calor alto"
   },
@@ -105,7 +105,7 @@
     "categoria": "No vulnerable · riesgo de calor medio"
   },
   {
-    "nombre": "VALLVIDRERA, EL TIBIDABO I LES PLANES",
+    "nombre": "VALLVIDRERA",
     "codigo": "08017",
     "categoria": "No vulnerable · riesgo de calor bajo"
   },
@@ -120,7 +120,7 @@
     "categoria": "No vulnerable · riesgo de calor medio"
   },
   {
-    "nombre": "DIAGONAL MAR I EL FRONT MARÍTIM DEL POBLENOU",
+    "nombre": "DIAGONAL MAR",
     "codigo": "08019",
     "categoria": "No vulnerable · riesgo de calor medio"
   },
@@ -175,7 +175,7 @@
     "categoria": "No vulnerable · riesgo de calor medio"
   },
   {
-    "nombre": "EL CAMP D'EN GRASSOT I GRÀCIA NOVA",
+    "nombre": "EL CAMP D'EN GRASSOT",
     "codigo": "08024",
     "categoria": "No vulnerable · riesgo de calor medio"
   },
@@ -215,7 +215,7 @@
     "categoria": "No vulnerable · riesgo de calor medio"
   },
   {
-    "nombre": "LA MATERNITAT I SANT RAMON",
+    "nombre": "LA MATERNITAT",
     "codigo": "08028",
     "categoria": "No vulnerable · riesgo de calor alto"
   },

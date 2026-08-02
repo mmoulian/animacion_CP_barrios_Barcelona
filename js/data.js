@@ -13,20 +13,26 @@ export async function loadBarrios() {
 
 export function parseCSV(text) {
   const lines = text.replace(/^\uFEFF/, '').trim().split('\n');
+  const header = lines[0].split(';').map((h) => h.trim().toUpperCase());
+  const iBarri = header.indexOf('BARRI');
+  const iCodigo = header.indexOf('CODIGO');
+  const iCat = header.indexOf('CATEGORIA');
+
+  if (iBarri === -1 || iCodigo === -1 || iCat === -1) {
+    throw new Error('CSV debe incluir columnas BARRI, CATEGORIA y CODIGO');
+  }
+
   const barrios = [];
 
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
 
-    const sep = line.indexOf(';');
-    const lastSep = line.lastIndexOf(';');
-    if (sep === -1 || lastSep === sep) continue;
-
+    const cols = line.split(';');
     barrios.push({
-      nombre: line.slice(0, sep).trim(),
-      codigo: line.slice(sep + 1, lastSep).trim(),
-      categoria: line.slice(lastSep + 1).trim(),
+      nombre: cols[iBarri]?.trim() ?? '',
+      codigo: cols[iCodigo]?.trim() ?? '',
+      categoria: cols[iCat]?.trim() ?? '',
     });
   }
 
