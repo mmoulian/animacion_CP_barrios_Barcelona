@@ -12,6 +12,17 @@ async function init() {
   const barrios = await loadBarrios();
   animator.setBarrios(barrios);
   animator.play();
+  reportEmbedHeight();
 }
+
+function reportEmbedHeight() {
+  const height = Math.ceil(document.documentElement.scrollHeight);
+  if (window.parent !== window) {
+    window.parent.postMessage({ type: 'cp-barrios-embed-height', height }, '*');
+  }
+}
+
+window.addEventListener('load', reportEmbedHeight);
+window.addEventListener('resize', reportEmbedHeight);
 
 init().catch(console.error);

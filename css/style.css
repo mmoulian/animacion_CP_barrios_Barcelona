@@ -20,11 +20,12 @@
 
 :root {
   --orange: #FB8C00;
+  --banner-border: #FFA726;
   --ink: #212121;
   --line: 1px;
   --banner-h: 56px;
   --digit-h: var(--banner-h);
-  --stress-h: 36px;
+  --stress-h: 54px;
   --text-size: 2.15rem;
   --font-digits: "korolev-compressed-heavy", "korolev-compressed", sans-serif;
   --font-name: "korolev-compressed-light", "korolev-compressed", sans-serif;
@@ -43,15 +44,24 @@ body {
   padding: 24px;
 }
 
+/* ── Bloque visual: barra + termómetro ── */
+.display {
+  width: min(960px, 96vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 /* ── Banner principal ── */
 .banner {
   display: flex;
   align-items: stretch;
   background: var(--orange);
-  border: var(--line) solid var(--ink);
+  border: var(--line) solid var(--banner-border);
   border-radius: 3px;
   height: var(--banner-h);
-  width: min(960px, 96vw);
+  width: 100%;
   overflow: hidden;
 }
 
@@ -63,7 +73,7 @@ body {
 .digit-box {
   width: 46px;
   height: 100%;
-  border-right: var(--line) solid var(--ink);
+  border-right: var(--line) solid var(--banner-border);
   overflow: hidden;
   position: relative;
 }
@@ -114,21 +124,32 @@ body {
   will-change: clip-path;
 }
 
+/* ── Contenedor del termómetro (debajo de la barra) ── */
+.indicator-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: var(--stress-h);
+  padding: 12px 0;
+  background: var(--orange);
+  border-radius: 3px;
+}
+
 /* ── Termómetro de estrés térmico ── */
 .indicator {
   display: flex;
   align-items: stretch;
-  gap: 6px;
-  padding: 0 12px 0 14px;
-  border-left: var(--line) solid var(--ink);
+  gap: 9px;
+  padding: 0;
   flex-shrink: 0;
 }
 
 .stress-track {
-  width: 8px;
+  width: 12px;
   height: var(--stress-h);
   border: var(--line) solid var(--ink);
-  border-radius: 4px;
+  border-radius: 6px;
   position: relative;
   align-self: center;
   overflow: hidden;
@@ -141,7 +162,7 @@ body {
   width: 100%;
   height: 0%;
   background: var(--ink);
-  border-radius: 2px 2px 3px 3px;
+  border-radius: 3px 3px 5px 5px;
   will-change: height;
 }
 
@@ -155,14 +176,14 @@ body {
 
 .stress-row {
   display: flex;
-  gap: 3px;
+  gap: 5px;
   align-items: center;
 }
 
 .stress-row span {
   display: block;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--ink);
   opacity: 0.18;

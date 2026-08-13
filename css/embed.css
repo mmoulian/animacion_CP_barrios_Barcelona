@@ -1,12 +1,24 @@
 /* Estilos para embed en iframe (Framer) */
+html.embed-root,
 body.embed {
   min-height: auto;
+  height: auto;
   background: transparent;
   padding: 0;
   margin: 0;
-  gap: 0;
+  overflow: hidden;
 }
 
-body.embed .banner {
+body.embed {
+  gap: 0;
+  display: block;
+}
+
+body.embed .display {
   width: 100%;
+  gap: 10px;
+}
+
+body.embed .indicator-panel {
+  padding: 12px 0;
 }
