@@ -20,7 +20,7 @@
 
 :root {
   --orange: #FB8C00;
-  --banner-border: #FFA726;
+  --banner-border: rgba(0, 0, 0, 0.5);
   --ink: #212121;
   --line: 1px;
   --banner-h: 56px;
