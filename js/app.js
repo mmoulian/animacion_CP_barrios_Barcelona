@@ -18,6 +18,8 @@ const btnExport = document.getElementById('btn-export');
 const animator = new BarrioAnimator({
   digitsEl,
   nameEl,
+  vulnerabilityEl: document.getElementById('vulnerability'),
+  thermalStressEl: document.getElementById('thermal-stress'),
   indicatorFill,
   stressScaleEl: document.getElementById('stress-scale'),
   onFrame: updateUI,

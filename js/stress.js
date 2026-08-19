@@ -31,3 +31,15 @@ export function getStressLevel(categoria) {
 export function getStressLabel(categoria) {
   return categoria;
 }
+
+export function getVulnerabilityLabel(categoria) {
+  return categoria.startsWith('Vulnerable')
+    ? 'BARRIO VULNERABLE'
+    : 'BARRIO NO VULNERABLE';
+}
+
+export function getThermalStressLabel(categoria) {
+  if (categoria.includes('riesgo de calor bajo')) return 'BAJO ESTRÉS TÉRMICO';
+  if (categoria.includes('riesgo de calor alto')) return 'ALTO ESTRÉS TÉRMICO';
+  return 'MEDIO ESTRÉS TÉRMICO';
+}

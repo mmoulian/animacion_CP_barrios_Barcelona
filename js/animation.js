@@ -1,5 +1,5 @@
 import { CONFIG } from './config.js';
-import { getStressLevel, getStressIndex, STRESS_POSITIONS } from './stress.js';
+import { getStressLevel, getStressIndex, STRESS_POSITIONS, getVulnerabilityLabel, getThermalStressLabel } from './stress.js';
 
 function readDigitH() {
   const raw = getComputedStyle(document.documentElement).getPropertyValue('--banner-h');
@@ -12,9 +12,11 @@ function easeInQuint(t) {
 }
 
 export class BarrioAnimator {
-  constructor({ digitsEl, nameEl, indicatorFill, stressScaleEl, onFrame, onTransitionEnd }) {
+  constructor({ digitsEl, nameEl, vulnerabilityEl, thermalStressEl, indicatorFill, stressScaleEl, onFrame, onTransitionEnd }) {
     this.digitsEl = digitsEl;
     this.nameEl = nameEl;
+    this.vulnerabilityEl = vulnerabilityEl;
+    this.thermalStressEl = thermalStressEl;
     this.indicatorFill = indicatorFill;
     this.stressScaleEl = stressScaleEl;
     this.onFrame = onFrame;
@@ -44,7 +46,9 @@ export class BarrioAnimator {
       this.currentStressIndex = getStressIndex(b.categoria);
       this._setDigitsInstant(this.currentCodigo);
       this.nameEl.textContent = b.nombre;
+      this._setCategories(b.categoria);
       this._setReveal(1);
+      this._setCategoryReveal(1);
       this._setIndicator(this.currentStress, false);
       this._setScaleLevel(this.currentStressIndex);
     }
@@ -90,10 +94,29 @@ export class BarrioAnimator {
   }
 
   _setReveal(progress) {
+    this._setRevealOn(this.nameEl, progress);
+  }
+
+  _setCategoryReveal(progress) {
+    this._setRevealOn(this.vulnerabilityEl, progress);
+    this._setRevealOn(this.thermalStressEl, progress);
+  }
+
+  _setRevealOn(el, progress) {
+    if (!el) return;
     const p = Math.max(0, Math.min(1, progress));
     const eased = easeInQuint(p);
     const clipTop = (1 - eased) * 100;
-    this.nameEl.style.clipPath = `inset(${clipTop}% 0 0 0)`;
+    el.style.clipPath = `inset(${clipTop}% 0 0 0)`;
+  }
+
+  _setCategories(categoria) {
+    if (this.vulnerabilityEl) {
+      this.vulnerabilityEl.textContent = getVulnerabilityLabel(categoria);
+    }
+    if (this.thermalStressEl) {
+      this.thermalStressEl.textContent = getThermalStressLabel(categoria);
+    }
   }
 
   _setIndicator(level, animate) {
@@ -144,7 +167,9 @@ export class BarrioAnimator {
       this.currentStressIndex = getStressIndex(b.categoria);
       this._setDigitsInstant(b.codigo);
       this.nameEl.textContent = b.nombre;
+      this._setCategories(b.categoria);
       this._setReveal(1);
+      this._setCategoryReveal(1);
       this._setIndicator(this.currentStress, false);
       this._setScaleLevel(this.currentStressIndex);
       this._phase = 'hold';
@@ -205,6 +230,7 @@ export class BarrioAnimator {
     // Actualizar nombre al inicio de la transición
     if (elapsed < 0.016) {
       this.nameEl.textContent = target.nombre;
+      this._setCategories(target.categoria);
       this._setScaleLevel(getStressIndex(target.categoria));
     }
 
@@ -239,6 +265,7 @@ export class BarrioAnimator {
     // Revelación del nombre: de abajo hacia arriba, sincronizada, con aceleración
     const revealT = Math.min(1, elapsed / revealDuration);
     this._setReveal(revealT);
+    this._setCategoryReveal(revealT);
 
     // Indicador de categoría
     const targetStress = getStressLevel(target.categoria);
@@ -256,6 +283,7 @@ export class BarrioAnimator {
       this.currentStressIndex = targetIndex;
       this._setDigitsInstant(toCodigo);
       this._setReveal(1);
+      this._setCategoryReveal(1);
       this._setIndicator(targetStress, true);
       this._setScaleLevel(targetIndex);
       this._phase = 'hold';

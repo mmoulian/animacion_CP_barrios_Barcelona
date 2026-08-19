@@ -4,6 +4,8 @@ import { BarrioAnimator } from './animation.js';
 const animator = new BarrioAnimator({
   digitsEl: document.getElementById('digits'),
   nameEl: document.getElementById('name'),
+  vulnerabilityEl: document.getElementById('vulnerability'),
+  thermalStressEl: document.getElementById('thermal-stress'),
   indicatorFill: document.getElementById('stress-fill'),
   stressScaleEl: document.getElementById('stress-scale'),
 });
