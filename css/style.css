@@ -31,6 +31,7 @@
   --font-digits: "korolev-compressed-heavy", "korolev-compressed", sans-serif;
   --font-name: "korolev-compressed-light", "korolev-compressed", sans-serif;
   --font-category: "Outfit", sans-serif;
+  --gap: 12px;
 }
 
 body {
@@ -61,8 +62,7 @@ body {
   align-items: stretch;
   background: var(--orange);
   border: var(--line) solid var(--banner-border);
-  border-radius: 3px 3px 0 0;
-  border-bottom: none;
+  border-radius: 3px;
   height: var(--banner-h);
   width: 100%;
   overflow: hidden;
@@ -131,13 +131,12 @@ body {
 .indicator-panel {
   display: flex;
   align-items: stretch;
-  gap: 20px;
+  gap: 50px;
   width: 100%;
   padding: 50px 0 0;
   background: var(--orange);
-  border: var(--line) solid var(--banner-border);
-  border-top: var(--line) solid var(--banner-border);
-  border-radius: 0 0 3px 3px;
+  border: none;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -176,7 +175,7 @@ body {
   display: flex;
   align-items: stretch;
   align-self: stretch;
-  gap: 12px;
+  gap: var(--gap);
   padding: 0;
   margin: 0;
   flex-shrink: 0;
@@ -211,7 +210,7 @@ body {
 
 .stress-row {
   display: flex;
-  gap: 7px;
+  gap: var(--gap);
   align-items: center;
 }
 
