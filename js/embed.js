@@ -16,15 +16,29 @@ const animator = new BarrioAnimator({
   stressScaleEl: document.getElementById('stress-scale'),
 });
 
+function applyScale(scale) {
+  if (!displayEl) return;
+
+  displayEl.style.width = `${DESIGN_WIDTH}px`;
+
+  // zoom ajusta layout en Chromium/Safari; transform como respaldo
+  if (CSS.supports('zoom', '1')) {
+    displayEl.style.zoom = String(scale);
+    displayEl.style.transform = '';
+  } else {
+    displayEl.style.zoom = '';
+    displayEl.style.transform = `scale(${scale})`;
+  }
+}
+
 function updateEmbedLayout() {
   if (!displayEl || !stageEl || !scalerEl) return;
 
   const scale = Math.min(1, window.innerWidth / DESIGN_WIDTH);
-  document.documentElement.style.setProperty('--embed-scale', String(scale));
+  applyScale(scale);
 
-  const naturalH = displayEl.offsetHeight;
-  const scaledW = DESIGN_WIDTH * scale;
-  const scaledH = Math.ceil(naturalH * scale);
+  const scaledW = Math.ceil(DESIGN_WIDTH * scale);
+  const scaledH = Math.ceil(displayEl.getBoundingClientRect().height);
 
   stageEl.style.width = `${scaledW}px`;
   stageEl.style.height = `${scaledH}px`;
@@ -45,6 +59,7 @@ async function init() {
   animator.setBarrios(barrios);
   animator.play();
 
+  await document.fonts.ready;
   requestAnimationFrame(() => {
     updateEmbedLayout();
     requestAnimationFrame(updateEmbedLayout);
