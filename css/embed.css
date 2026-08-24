@@ -10,8 +10,7 @@ body.embed {
 }
 
 body.embed {
-  --embed-design-w: 960;
-  --embed-scale: min(1, 100vw / var(--embed-design-w));
+  --embed-scale: 1;
   gap: 0;
   display: block;
 }
@@ -19,16 +18,18 @@ body.embed {
 body.embed .embed-scaler {
   width: 100%;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
 }
 
-body.embed .embed-scaler .display {
+body.embed .embed-stage {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+body.embed .embed-stage .display {
   width: 960px;
-  max-width: 960px;
+  max-width: none;
   transform: scale(var(--embed-scale));
-  transform-origin: top center;
-  flex-shrink: 0;
+  transform-origin: top left;
 }
 
 body.embed .indicator-panel {
