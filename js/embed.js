@@ -2,6 +2,7 @@ import { loadBarrios } from './data.js';
 import { BarrioAnimator } from './animation.js';
 
 const DESIGN_WIDTH = 960;
+const MAX_SCALE = 1.35;
 
 const displayEl = document.querySelector('.display');
 const stageEl = document.querySelector('.embed-stage');
@@ -34,7 +35,7 @@ function applyScale(scale) {
 function updateEmbedLayout() {
   if (!displayEl || !stageEl || !scalerEl) return;
 
-  const scale = Math.min(1, window.innerWidth / DESIGN_WIDTH);
+  const scale = Math.min(window.innerWidth / DESIGN_WIDTH, MAX_SCALE);
   applyScale(scale);
 
   const scaledW = Math.ceil(DESIGN_WIDTH * scale);

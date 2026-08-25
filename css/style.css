@@ -309,3 +309,17 @@ body {
   font-size: 0.75rem;
   color: #666;
 }
+
+/* ── Desktop: demo más grande (no aplica al embed) ── */
+@media (min-width: 961px) {
+  body:not(.embed) {
+    --banner-h: 82px;
+    --digit-w: 60px;
+    --text-size: 3.1rem;
+    --category-size: 18px;
+  }
+
+  body:not(.embed) .display {
+    width: min(1100px, 96vw);
+  }
+}
