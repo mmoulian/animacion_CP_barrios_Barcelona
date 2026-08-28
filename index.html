@@ -23,9 +23,15 @@
     <div class="indicator-panel">
       <div class="category-area">
         <hr class="category-line" aria-hidden="true">
-        <span class="category-text" id="vulnerability"></span>
+        <div class="category-row" id="vulnerability-row">
+          <img class="category-icon" id="vulnerability-icon" src="icons/bajo.png" alt="">
+          <span class="category-text" id="vulnerability"></span>
+        </div>
         <hr class="category-line" aria-hidden="true">
-        <span class="category-text" id="thermal-stress"></span>
+        <div class="category-row" id="thermal-stress-row">
+          <img class="category-icon" id="thermal-stress-icon" src="icons/medio.png" alt="">
+          <span class="category-text" id="thermal-stress"></span>
+        </div>
         <hr class="category-line" aria-hidden="true">
       </div>
       <div class="indicator">
@@ -94,6 +100,6 @@
     </div>
   </div>
 
-  <script type="module" src="js/app.js?v=5"></script>
+  <script type="module" src="js/app.js?v=6"></script>
 </body>
 </html>

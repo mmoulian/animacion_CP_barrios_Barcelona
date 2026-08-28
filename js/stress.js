@@ -43,3 +43,13 @@ export function getThermalStressLabel(categoria) {
   if (categoria.includes('riesgo de calor alto')) return 'ALTO ESTRÉS TÉRMICO';
   return 'MEDIO ESTRÉS TÉRMICO';
 }
+
+export function getVulnerabilityIcon(categoria) {
+  return categoria.startsWith('Vulnerable') ? 'icons/alto.png' : 'icons/bajo.png';
+}
+
+export function getThermalStressIcon(categoria) {
+  if (categoria.includes('riesgo de calor bajo')) return 'icons/bajo.png';
+  if (categoria.includes('riesgo de calor alto')) return 'icons/alto.png';
+  return 'icons/medio.png';
+}

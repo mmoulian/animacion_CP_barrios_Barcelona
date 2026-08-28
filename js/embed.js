@@ -13,6 +13,10 @@ const animator = new BarrioAnimator({
   nameEl: document.getElementById('name'),
   vulnerabilityEl: document.getElementById('vulnerability'),
   thermalStressEl: document.getElementById('thermal-stress'),
+  vulnerabilityIconEl: document.getElementById('vulnerability-icon'),
+  thermalStressIconEl: document.getElementById('thermal-stress-icon'),
+  vulnerabilityRowEl: document.getElementById('vulnerability-row'),
+  thermalStressRowEl: document.getElementById('thermal-stress-row'),
   indicatorFill: document.getElementById('stress-fill'),
   stressScaleEl: document.getElementById('stress-scale'),
 });

@@ -1,5 +1,5 @@
 import { CONFIG } from './config.js';
-import { getStressLevel, getStressIndex, STRESS_POSITIONS, getVulnerabilityLabel, getThermalStressLabel } from './stress.js';
+import { getStressLevel, getStressIndex, STRESS_POSITIONS, getVulnerabilityLabel, getThermalStressLabel, getVulnerabilityIcon, getThermalStressIcon } from './stress.js';
 
 function readDigitH() {
   const raw = getComputedStyle(document.documentElement).getPropertyValue('--banner-h');
@@ -12,11 +12,15 @@ function easeInQuint(t) {
 }
 
 export class BarrioAnimator {
-  constructor({ digitsEl, nameEl, vulnerabilityEl, thermalStressEl, indicatorFill, stressScaleEl, onFrame, onTransitionEnd }) {
+  constructor({ digitsEl, nameEl, vulnerabilityEl, thermalStressEl, vulnerabilityIconEl, thermalStressIconEl, vulnerabilityRowEl, thermalStressRowEl, indicatorFill, stressScaleEl, onFrame, onTransitionEnd }) {
     this.digitsEl = digitsEl;
     this.nameEl = nameEl;
     this.vulnerabilityEl = vulnerabilityEl;
     this.thermalStressEl = thermalStressEl;
+    this.vulnerabilityIconEl = vulnerabilityIconEl;
+    this.thermalStressIconEl = thermalStressIconEl;
+    this.vulnerabilityRowEl = vulnerabilityRowEl;
+    this.thermalStressRowEl = thermalStressRowEl;
     this.indicatorFill = indicatorFill;
     this.stressScaleEl = stressScaleEl;
     this.onFrame = onFrame;
@@ -98,8 +102,8 @@ export class BarrioAnimator {
   }
 
   _setCategoryReveal(progress) {
-    this._setRevealOn(this.vulnerabilityEl, progress);
-    this._setRevealOn(this.thermalStressEl, progress);
+    this._setRevealOn(this.vulnerabilityRowEl, progress);
+    this._setRevealOn(this.thermalStressRowEl, progress);
   }
 
   _setRevealOn(el, progress) {
@@ -114,8 +118,14 @@ export class BarrioAnimator {
     if (this.vulnerabilityEl) {
       this.vulnerabilityEl.textContent = getVulnerabilityLabel(categoria);
     }
+    if (this.vulnerabilityIconEl) {
+      this.vulnerabilityIconEl.src = getVulnerabilityIcon(categoria);
+    }
     if (this.thermalStressEl) {
       this.thermalStressEl.textContent = getThermalStressLabel(categoria);
+    }
+    if (this.thermalStressIconEl) {
+      this.thermalStressIconEl.src = getThermalStressIcon(categoria);
     }
   }
 
