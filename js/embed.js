@@ -61,13 +61,17 @@ function reportEmbedHeight() {
 
 async function init() {
   const barrios = await loadBarrios();
+  await document.fonts.ready;
   animator.setBarrios(barrios);
   animator.play();
 
-  await document.fonts.ready;
   requestAnimationFrame(() => {
     updateEmbedLayout();
-    requestAnimationFrame(updateEmbedLayout);
+    animator.refreshDigitMetrics();
+    requestAnimationFrame(() => {
+      updateEmbedLayout();
+      animator.refreshDigitMetrics();
+    });
   });
 }
 

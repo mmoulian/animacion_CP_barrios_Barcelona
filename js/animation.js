@@ -2,16 +2,35 @@ import { CONFIG } from './config.js';
 import { getStressLevel, getStressIndex, STRESS_POSITIONS, getVulnerabilityLabel, getThermalStressLabel, getVulnerabilityIcon, getThermalStressIcon } from './stress.js';
 
 function readDigitH(digitsEl) {
+  for (const el of [digitsEl, digitsEl?.closest('.banner'), document.body, document.documentElement]) {
+    if (!el) continue;
+    const raw = getComputedStyle(el).getPropertyValue('--digit-h').trim();
+    const parsed = parseFloat(raw);
+    if (Number.isFinite(parsed) && parsed > 0) return parsed;
+  }
+
   const box = digitsEl?.querySelector('.digit-box');
   if (box) {
-    const height = Math.round(box.getBoundingClientRect().height);
+    const span = box.querySelector('.digit-strip span');
+    if (span) {
+      const h = parseFloat(getComputedStyle(span).height);
+      if (Number.isFinite(h) && h > 0) return Math.round(h);
+    }
+
+    let height = box.offsetHeight;
+    const display = box.closest('.display');
+    if (display && height > 0) {
+      const zoom = parseFloat(display.style.zoom);
+      if (Number.isFinite(zoom) && zoom > 0 && zoom !== 1) {
+        return Math.round(height / zoom);
+      }
+      const scaleMatch = display.style.transform?.match(/scale\(([\d.]+)\)/);
+      if (scaleMatch) return Math.round(height / parseFloat(scaleMatch[1]));
+    }
     if (height > 0) return height;
   }
 
-  const raw = getComputedStyle(document.body).getPropertyValue('--digit-h').trim()
-    || getComputedStyle(document.documentElement).getPropertyValue('--digit-h').trim();
-  const parsed = parseFloat(raw);
-  return Number.isFinite(parsed) && parsed > 0 ? parsed : 56;
+  return 56;
 }
 
 /** Curva de aceleración fuerte (ease-in quint) */
