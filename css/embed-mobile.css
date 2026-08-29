@@ -20,6 +20,7 @@ body.embed-mobile {
   --panel-gap: 24px;
   --panel-top: 24px;
   --category-pad: 12px;
+  --embed-mobile-h: 228px;
 }
 
 body.embed-mobile {
