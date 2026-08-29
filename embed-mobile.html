@@ -54,6 +54,31 @@
     </div>
   </div>
 
-  <script type="module" src="js/embed-mobile.js?v=4"></script>
+  <script>
+    (function () {
+      function fit() {
+        var el = document.querySelector('.display');
+        if (!el) return;
+        var h = Math.ceil(el.getBoundingClientRect().height) || 228;
+        document.documentElement.style.height = h + 'px';
+        document.body.style.height = h + 'px';
+        try {
+          if (window.frameElement) window.frameElement.style.height = h + 'px';
+        } catch (e) {}
+        if (window.parent !== window) {
+          window.parent.postMessage({ type: 'cp-barrios-embed-height', height: h }, '*');
+        }
+      }
+      window.addEventListener('load', fit);
+      window.addEventListener('resize', fit);
+      if (window.ResizeObserver) {
+        document.addEventListener('DOMContentLoaded', function () {
+          var el = document.querySelector('.display');
+          if (el) new ResizeObserver(fit).observe(el);
+        });
+      }
+    })();
+  </script>
+  <script type="module" src="js/embed-mobile.js?v=5"></script>
 </body>
 </html>

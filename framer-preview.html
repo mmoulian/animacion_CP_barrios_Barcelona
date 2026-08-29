@@ -58,7 +58,7 @@
     }
 
     iframe.mobile {
-      height: 232px;
+      height: 280px;
     }
 
     label {
@@ -134,8 +134,9 @@
 
   <p class="note">
     Desktop: altura <code>300px</code> · URL <code>embed.html</code><br>
-    Mobile: altura <code>232px</code> · URL <code>embed-mobile.html</code><br>
-    Ancho: <code>100%</code>. Oculta cada embed según breakpoint en Framer.
+    Mobile: altura <code>280px</code> en iframe y en el frame de Framer · URL <code>embed-mobile.html</code><br>
+    Ancho: <code>100%</code>. Oculta cada embed según breakpoint en Framer.<br>
+    <strong>Importante:</strong> en Framer, arrastra el frame del embed hasta ~280px de alto (el atributo <code>height</code> del iframe no basta).
   </p>
 
   <script>
@@ -159,7 +160,7 @@
 `<iframe
   src="${base}/embed-mobile.html"
   width="100%"
-  height="232"
+  height="280"
   style="border:none; overflow:hidden; display:block;"
   scrolling="no"
   allow="autoplay"

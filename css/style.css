@@ -22,7 +22,7 @@
   --orange: #ee8501;
   --banner-border: rgba(0, 0, 0, 0.5);
   --ink: #212121;
-  --line: 1px;
+  --line: 1.25px;
   --banner-h: 68px;
   --digit-h: var(--banner-h);
   --digit-w: 50px;

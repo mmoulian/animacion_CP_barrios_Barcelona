@@ -2,6 +2,7 @@ import { loadBarrios } from './data.js?v=13';
 import { BarrioAnimator } from './animation.js?v=13';
 
 const displayEl = document.querySelector('.display');
+const MOBILE_EMBED_HEIGHT = 228;
 
 const animator = new BarrioAnimator({
   digitsEl: document.getElementById('digits'),
@@ -16,18 +17,53 @@ const animator = new BarrioAnimator({
   stressScaleEl: document.getElementById('stress-scale'),
 });
 
-function reportEmbedHeight() {
-  const height = Math.ceil(displayEl?.offsetHeight ?? document.documentElement.scrollHeight);
+function fitEmbedDocument(height) {
+  const h = Math.max(MOBILE_EMBED_HEIGHT, Math.ceil(height));
+  document.documentElement.style.height = `${h}px`;
+  document.body.style.height = `${h}px`;
+
+  try {
+    if (window.frameElement) {
+      window.frameElement.style.height = `${h}px`;
+    }
+  } catch (_) {
+    /* cross-origin: Framer debe ajustar el frame manualmente */
+  }
+
   if (window.parent !== window) {
-    window.parent.postMessage({ type: 'cp-barrios-embed-height', height }, '*');
+    window.parent.postMessage({ type: 'cp-barrios-embed-height', height: h }, '*');
+  }
+}
+
+function reportEmbedHeight() {
+  const height = displayEl?.getBoundingClientRect().height ?? displayEl?.offsetHeight ?? MOBILE_EMBED_HEIGHT;
+  fitEmbedDocument(height);
+}
+
+async function waitForFonts() {
+  await document.fonts.ready;
+  try {
+    await Promise.all([
+      document.fonts.load('900 1em korolev-compressed-heavy'),
+      document.fonts.load('300 1em korolev-compressed-light'),
+    ]);
+  } catch (_) {
+    /* Typekit puede cargar de forma asíncrona */
   }
 }
 
 async function init() {
   const barrios = await loadBarrios();
-  await document.fonts.ready;
+  await waitForFonts();
+
   animator.setBarrios(barrios);
   animator.refreshDigitMetrics();
+
+  await new Promise((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(resolve));
+  });
+
+  reportEmbedHeight();
   animator.play();
 
   requestAnimationFrame(() => {
@@ -35,6 +71,12 @@ async function init() {
     reportEmbedHeight();
     requestAnimationFrame(reportEmbedHeight);
   });
+
+  let passes = 0;
+  const syncHeight = setInterval(() => {
+    reportEmbedHeight();
+    if (++passes >= 12) clearInterval(syncHeight);
+  }, 250);
 }
 
 if (displayEl) {

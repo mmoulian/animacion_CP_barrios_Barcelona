@@ -6,7 +6,7 @@ body.embed-mobile {
   background: transparent;
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 html.embed-root,
@@ -21,6 +21,7 @@ body.embed-mobile {
   --panel-top: 24px;
   --category-pad: 12px;
   --embed-mobile-h: 228px;
+  --line: 1px;
 }
 
 body.embed-mobile {
@@ -29,6 +30,7 @@ body.embed-mobile {
 
 body.embed-mobile .display {
   width: 100%;
+  overflow: visible;
 }
 
 /* ── Cabecera mobile: dígitos + nombre apilados ── */
@@ -83,6 +85,7 @@ body.embed-mobile .banner--mobile .name-area {
 body.embed-mobile .indicator-panel {
   gap: var(--panel-gap);
   padding: var(--panel-top) 0 0;
+  overflow: visible;
 }
 
 body.embed-mobile .category-row {

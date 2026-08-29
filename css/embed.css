@@ -12,6 +12,7 @@ body.embed {
 body.embed {
   gap: 0;
   display: block;
+  --line: 1.25px;
 }
 
 body.embed .embed-scaler {
