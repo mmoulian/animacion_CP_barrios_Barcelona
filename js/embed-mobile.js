@@ -1,5 +1,5 @@
-import { loadBarrios } from './data.js';
-import { BarrioAnimator } from './animation.js';
+import { loadBarrios } from './data.js?v=13';
+import { BarrioAnimator } from './animation.js?v=13';
 
 const displayEl = document.querySelector('.display');
 

@@ -63,9 +63,10 @@ body {
   background: var(--orange);
   border: var(--line) solid var(--banner-border);
   border-radius: 3px;
-  height: var(--banner-h);
+  height: calc(var(--banner-h) + 2 * var(--line));
   width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .digits {
@@ -75,7 +76,7 @@ body {
 
 .digit-box {
   width: var(--digit-w);
-  height: 100%;
+  height: var(--digit-h);
   border-right: var(--line) solid var(--banner-border);
   overflow: hidden;
   position: relative;

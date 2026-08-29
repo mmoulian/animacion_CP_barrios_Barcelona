@@ -2,32 +2,22 @@ import { CONFIG } from './config.js';
 import { getStressLevel, getStressIndex, STRESS_POSITIONS, getVulnerabilityLabel, getThermalStressLabel, getVulnerabilityIcon, getThermalStressIcon } from './stress.js';
 
 function readDigitH(digitsEl) {
+  const box = digitsEl?.querySelector('.digit-box');
+  if (box) {
+    const spans = box.querySelectorAll('.digit-strip span');
+    if (spans.length >= 2) {
+      const step = spans[1].offsetTop - spans[0].offsetTop;
+      if (step > 0) return step;
+    }
+    if (spans[0]?.offsetHeight > 0) return spans[0].offsetHeight;
+    if (box.offsetHeight > 0) return box.offsetHeight;
+  }
+
   for (const el of [digitsEl, digitsEl?.closest('.banner'), document.body, document.documentElement]) {
     if (!el) continue;
     const raw = getComputedStyle(el).getPropertyValue('--digit-h').trim();
     const parsed = parseFloat(raw);
     if (Number.isFinite(parsed) && parsed > 0) return parsed;
-  }
-
-  const box = digitsEl?.querySelector('.digit-box');
-  if (box) {
-    const span = box.querySelector('.digit-strip span');
-    if (span) {
-      const h = parseFloat(getComputedStyle(span).height);
-      if (Number.isFinite(h) && h > 0) return Math.round(h);
-    }
-
-    let height = box.offsetHeight;
-    const display = box.closest('.display');
-    if (display && height > 0) {
-      const zoom = parseFloat(display.style.zoom);
-      if (Number.isFinite(zoom) && zoom > 0 && zoom !== 1) {
-        return Math.round(height / zoom);
-      }
-      const scaleMatch = display.style.transform?.match(/scale\(([\d.]+)\)/);
-      if (scaleMatch) return Math.round(height / parseFloat(scaleMatch[1]));
-    }
-    if (height > 0) return height;
   }
 
   return 56;

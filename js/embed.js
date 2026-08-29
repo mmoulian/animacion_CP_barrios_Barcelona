@@ -1,5 +1,5 @@
-import { loadBarrios } from './data.js';
-import { BarrioAnimator } from './animation.js';
+import { loadBarrios } from './data.js?v=13';
+import { BarrioAnimator } from './animation.js?v=13';
 
 const DESIGN_WIDTH = 960;
 const MAX_SCALE = 1.35;
@@ -49,6 +49,7 @@ function updateEmbedLayout() {
   stageEl.style.height = `${scaledH}px`;
   scalerEl.style.height = `${scaledH}px`;
 
+  animator.refreshDigitMetrics();
   reportEmbedHeight();
 }
 
@@ -59,20 +60,31 @@ function reportEmbedHeight() {
   }
 }
 
+async function waitForFonts() {
+  await document.fonts.ready;
+  try {
+    await Promise.all([
+      document.fonts.load('900 1em korolev-compressed-heavy'),
+      document.fonts.load('300 1em korolev-compressed-light'),
+    ]);
+  } catch (_) {
+    /* Typekit puede cargar de forma asíncrona */
+  }
+}
+
 async function init() {
   const barrios = await loadBarrios();
-  await document.fonts.ready;
-  animator.setBarrios(barrios);
-  animator.play();
+  await waitForFonts();
 
-  requestAnimationFrame(() => {
-    updateEmbedLayout();
-    animator.refreshDigitMetrics();
-    requestAnimationFrame(() => {
-      updateEmbedLayout();
-      animator.refreshDigitMetrics();
-    });
+  animator.setBarrios(barrios);
+  updateEmbedLayout();
+
+  await new Promise((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(resolve));
   });
+
+  updateEmbedLayout();
+  animator.play();
 }
 
 if (displayEl) {
