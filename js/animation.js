@@ -1,9 +1,17 @@
 import { CONFIG } from './config.js';
 import { getStressLevel, getStressIndex, STRESS_POSITIONS, getVulnerabilityLabel, getThermalStressLabel, getVulnerabilityIcon, getThermalStressIcon } from './stress.js';
 
-function readDigitH() {
-  const raw = getComputedStyle(document.documentElement).getPropertyValue('--banner-h');
-  return parseInt(raw, 10) || 56;
+function readDigitH(digitsEl) {
+  const box = digitsEl?.querySelector('.digit-box');
+  if (box) {
+    const height = Math.round(box.getBoundingClientRect().height);
+    if (height > 0) return height;
+  }
+
+  const raw = getComputedStyle(document.body).getPropertyValue('--digit-h').trim()
+    || getComputedStyle(document.documentElement).getPropertyValue('--digit-h').trim();
+  const parsed = parseFloat(raw);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 56;
 }
 
 /** Curva de aceleración fuerte (ease-in quint) */
@@ -61,7 +69,6 @@ export class BarrioAnimator {
   _buildDigitBoxes() {
     this.digitsEl.innerHTML = '';
     this.strips = [];
-    this._digitH = readDigitH();
 
     for (let i = 0; i < 5; i++) {
       const box = document.createElement('div');
@@ -80,6 +87,14 @@ export class BarrioAnimator {
       this.digitsEl.appendChild(box);
       this.strips.push(strip);
     }
+
+    this.refreshDigitMetrics();
+  }
+
+  refreshDigitMetrics() {
+    if (!this.strips?.length) return;
+    this._digitH = readDigitH(this.digitsEl);
+    this._setDigitsInstant(this.currentCodigo.padStart(5, '0'));
   }
 
   _setDigitsInstant(codigo) {

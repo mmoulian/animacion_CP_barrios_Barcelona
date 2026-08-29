@@ -1,0 +1,103 @@
+/* Embed mobile — layout apilado (CP arriba, barrio abajo) */
+html.embed-root,
+body.embed-mobile {
+  min-height: auto;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+html.embed-root,
+body.embed-mobile {
+  --digit-h: 48px;
+  --digit-w: 42px;
+  --banner-name-h: 56px;
+  --text-size: 2.35rem;
+  --category-size: 14px;
+  --category-icon-size: 24px;
+  --panel-gap: 24px;
+  --panel-top: 24px;
+  --category-pad: 12px;
+}
+
+body.embed-mobile {
+  display: block;
+}
+
+body.embed-mobile .display {
+  width: 100%;
+}
+
+/* ── Cabecera mobile: dígitos + nombre apilados ── */
+body.embed-mobile .banner--mobile {
+  flex-direction: column;
+  align-items: stretch;
+  height: auto;
+  overflow: visible;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+body.embed-mobile .banner--mobile .banner-codes {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  border: var(--line) solid var(--banner-border);
+  border-bottom: none;
+  background: var(--orange);
+}
+
+body.embed-mobile .banner--mobile .digits {
+  flex-shrink: 0;
+}
+
+body.embed-mobile .banner--mobile .digits-spacer {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--digit-h);
+}
+
+body.embed-mobile .banner--mobile .digit-box {
+  height: var(--digit-h);
+}
+
+body.embed-mobile .banner--mobile .digit-strip span {
+  height: var(--digit-h);
+  font-size: 2rem;
+}
+
+body.embed-mobile .banner--mobile .name-area {
+  flex: none;
+  width: 100%;
+  height: var(--banner-name-h);
+  padding: 0 10px;
+  background: var(--orange);
+  border: var(--line) solid var(--banner-border);
+}
+
+/* ── Panel categorías + termómetro ── */
+body.embed-mobile .indicator-panel {
+  gap: var(--panel-gap);
+  padding: var(--panel-top) 0 0;
+}
+
+body.embed-mobile .category-row {
+  padding: var(--category-pad) 0;
+}
+
+body.embed-mobile .category-icon {
+  width: var(--category-icon-size);
+  height: var(--category-icon-size);
+}
+
+body.embed-mobile .stress-track {
+  width: 14px;
+}
+
+body.embed-mobile .stress-row span {
+  width: 7px;
+  height: 7px;
+}

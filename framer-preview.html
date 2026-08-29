@@ -38,12 +38,27 @@
       margin-bottom: 32px;
     }
 
+    .preview-frame--mobile {
+      max-width: 390px;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 32px 0 12px;
+    }
+
     iframe {
       display: block;
       width: 100%;
       height: 300px;
       border: none;
       overflow: hidden;
+    }
+
+    iframe.mobile {
+      height: 210px;
     }
 
     label {
@@ -99,25 +114,39 @@
     ></iframe>
   </div>
 
-  <label>Código para Framer (Embed → HTML)</label>
+  <label>Código para Framer — Desktop</label>
   <pre id="snippet"></pre>
 
+  <h2>Mobile</h2>
+  <div class="preview-frame preview-frame--mobile">
+    <iframe
+      id="embed-mobile"
+      class="mobile"
+      src="embed-mobile.html"
+      title="CP Barrios embed mobile"
+      scrolling="no"
+      allow="autoplay"
+    ></iframe>
+  </div>
+
+  <label>Código para Framer — Mobile</label>
+  <pre id="snippet-mobile"></pre>
+
   <p class="note">
-    Altura recomendada del iframe: <code>300px</code> desktop · <code>100px</code> mobile.
-    Ancho: <code>100%</code> del contenedor en Framer.
-    Producción:
-    <code>https://mmoulian.github.io/animacion_CP_barrios_Barcelona/embed.html</code>
+    Desktop: altura <code>300px</code> · URL <code>embed.html</code><br>
+    Mobile: altura <code>210px</code> · URL <code>embed-mobile.html</code><br>
+    Ancho: <code>100%</code>. Oculta cada embed según breakpoint en Framer.
   </p>
 
   <script>
     const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-    const embedSrc = isLocal
-      ? `${location.origin}/embed.html`
-      : 'https://mmoulian.github.io/animacion_CP_barrios_Barcelona/embed.html';
+    const base = isLocal
+      ? location.origin
+      : 'https://mmoulian.github.io/animacion_CP_barrios_Barcelona';
 
     document.getElementById('snippet').textContent =
 `<iframe
-  src="${embedSrc}"
+  src="${base}/embed.html"
   width="100%"
   height="300"
   style="border:none; overflow:hidden; display:block;"
@@ -126,9 +155,26 @@
   title="CP Barrios — STORY CALOR"
 ></iframe>`;
 
+    document.getElementById('snippet-mobile').textContent =
+`<iframe
+  src="${base}/embed-mobile.html"
+  width="100%"
+  height="210"
+  style="border:none; overflow:hidden; display:block;"
+  scrolling="no"
+  allow="autoplay"
+  title="CP Barrios — STORY CALOR Mobile"
+></iframe>`;
+
     window.addEventListener('message', (event) => {
-      if (event.data?.type === 'cp-barrios-embed-height') {
-        document.getElementById('embed').style.height = `${event.data.height}px`;
+      if (event.data?.type !== 'cp-barrios-embed-height') return;
+      const embed = document.getElementById('embed');
+      const embedMobile = document.getElementById('embed-mobile');
+      if (event.source === embed.contentWindow) {
+        embed.style.height = `${event.data.height}px`;
+      }
+      if (event.source === embedMobile.contentWindow) {
+        embedMobile.style.height = `${event.data.height}px`;
       }
     });
   </script>

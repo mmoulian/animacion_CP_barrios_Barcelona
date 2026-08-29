@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" class="embed-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CP Barrios — Embed Mobile</title>
+  <link rel="stylesheet" href="https://use.typekit.net/gzc7pai.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/embed-mobile.css">
+</head>
+<body class="embed embed-mobile">
+
+  <div class="display">
+    <div class="banner banner--mobile">
+      <div class="banner-codes">
+        <div class="digits" id="digits"></div>
+        <div class="digits-spacer" aria-hidden="true"></div>
+      </div>
+      <div class="name-area">
+        <span class="name-text" id="name"></span>
+      </div>
+    </div>
+
+    <div class="indicator-panel">
+      <div class="category-area">
+        <hr class="category-line" aria-hidden="true">
+        <div class="category-row" id="vulnerability-row">
+          <img class="category-icon" id="vulnerability-icon" src="icons/bajo.png" alt="">
+          <span class="category-text" id="vulnerability"></span>
+        </div>
+        <hr class="category-line" aria-hidden="true">
+        <div class="category-row" id="thermal-stress-row">
+          <img class="category-icon" id="thermal-stress-icon" src="icons/medio.png" alt="">
+          <span class="category-text" id="thermal-stress"></span>
+        </div>
+        <hr class="category-line" aria-hidden="true">
+      </div>
+      <div class="indicator">
+        <div class="stress-track">
+          <div class="stress-fill" id="stress-fill"></div>
+        </div>
+        <div class="stress-scale" id="stress-scale" aria-hidden="true">
+          <div class="stress-row" data-level="5"><span></span><span></span><span></span></div>
+          <div class="stress-row" data-level="4"><span></span><span></span><span></span></div>
+          <div class="stress-row" data-level="3"><span></span><span></span><span></span></div>
+          <div class="stress-row" data-level="2"><span></span><span></span><span></span></div>
+          <div class="stress-row" data-level="1"><span></span><span></span><span></span></div>
+          <div class="stress-row" data-level="0"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/embed-mobile.js?v=3"></script>
+</body>
+</html>
